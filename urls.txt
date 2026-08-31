@@ -1,0 +1,13 @@
+/|||
+/about/|||about.html
+/trends/|||trends.html
+/kids/|||kids.html
+/about/press/|||about-press.html
+/about/copyright/|||about-copyright.html
+/t/contact_us/|||t-contact_us.html
+/creators/|||creators.html
+/ads/|||ads.html
+/t/terms|||t-terms.html
+/about/policies/|||about-policies.html
+/howyoutubeworks?utm_campaign=ytgen&utm_source=ythp&utm_medium=LeftNav&utm_content=txt&u=https%3A%2F%2Fwww.youtube.com%2Fhowyoutubeworks%3Futm_source%3Dythp%26utm_medium%3DLeftNav%26utm_campaign%3Dytgen|||howyoutubeworks-utm_campaign-ytgen-utm_source-ythp-utm_medium-leftnav-utm_content-txt-u-https-www.youtube.com-howyoutubeworks-utm_source-ythp-utm_medium-leftnav-utm_campaign-ytgen.html
+/new|||new.html
