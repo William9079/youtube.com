@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#0f0f0f;font:14px Arial,Helvetica,sans-serif}
+header{height:64px;position:sticky;top:0;background:white;display:flex;align-items:center;gap:24px;padding:0 24px;border-bottom:1px solid #eee;z-index:2}
+.logo{display:flex;align-items:center;gap:6px;font-size:20px;font-weight:bold;min-width:150px}
+.play{background:#f00;color:#fff;border-radius:5px;padding:2px 8px;font-size:14px}
+.search{display:flex;flex:1;max-width:640px;margin:auto}
+.search input{width:100%;height:34px;border:1px solid #ccc;border-radius:2px 0 0 2px;padding:0 12px;font-size:16px}
+.search button{width:64px;border:1px solid #ccc;background:#f8f8f8}
+.top-right{margin-left:auto;color:#555;font-size:18px}
+.layout{display:flex;min-height:calc(100vh - 64px)}
+aside{width:240px;flex-shrink:0;border-right:1px solid #eee;padding:8px 0}
+.nav{padding:12px 28px;display:flex;gap:24px;align-items:center}
+.nav.active{background:#eee;font-weight:bold}
+main{padding:24px;flex:1}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(190px,1fr));gap:28px 16px}
+.video{min-width:0}
+.thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:#ddd}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.duration{position:absolute;bottom:4px;right:4px;background:#111;color:white;padding:2px 4px;border-radius:2px;font-weight:bold;font-size:12px}
+.details{display:flex;gap:12px;margin-top:12px}
+.avatar{width:36px;height:36px;object-fit:cover;border-radius:50%;flex-shrink:0}
+.info{min-width:0}
+.title{font-size:16px;line-height:1.35;font-weight:500;margin-bottom:6px;color:#111;text-decoration:none;display:block}
+.meta{color:#606060;line-height:1.5}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(180px,1fr))}aside{width:200px}}
+@media(max-width:800px){aside{display:none}.grid{grid-template-columns:repeat(2,minmax(150px,1fr))}header{padding:0 12px}.logo{min-width:auto}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}main{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="play">▶</span><span>YouTube</span></div>
+  <div class="search"><input placeholder="Pesquisar" aria-label="Pesquisar"><button>⌕</button></div>
+  <div class="top-right">⋮　🔴</div>
+</header>
+<div class="layout">
+<aside>
+  <div class="nav active">⌂　Início</div><div class="nav">♨　Tendências</div><div class="nav">▣　Inscrições</div>
+  <hr><div class="nav">▣　Biblioteca</div><div class="nav">◷　História</div>
+  <hr><div class="nav">Faça login para curtir vídeos, comentar e se inscrever.</div>
+  <div class="nav">▶　Música</div><div class="nav">🎮　Jogos</div><div class="nav">▣　Filmes e programas</div><div class="nav">▣　Notícias</div>
+</aside>
+<main>
+<div class="grid">
+  <article class="video">
+    <a class="thumb" href="/watch?v=QV2HU-DTHqQ"><img src="assets/thumb_re4.jpg" alt="RESIDENT EVIL 4 — EL GIGANTE"><span class="duration">3:46:04</span></a>
+    <div class="details"><img class="avatar" src="assets/perfil_levi.jpg" alt="Levi Café"><div class="info">
+      <a class="title" href="/watch?v=QV2HU-DTHqQ">RESIDENT EVIL 4 🟣 EL GIGANTE chorou no DESAFIO Profissional Very Hard</a>
+      <div class="meta">Levi Café<br>8,7 mil visualizações · há 5 horas</div>
+    </div></div>
+  </article>
+  <article class="video">
+    <a class="thumb" href="/watch?v=ocs7qcU7LiM"><img src="assets/thumb_ps5.jpg" alt="UNBOXING DO MEU PS5 em 2021"><span class="duration">2:29:19</span></a>
+    <div class="details"><img class="avatar" src="assets/perfil_levi.jpg" alt="Levi Café"><div class="info">
+      <a class="title" href="/watch?v=ocs7qcU7LiM">UNBOXING DO MEU PS5 em 2021</a>
+      <div class="meta">Levi Café<br>3,3 mil visualizações · transmitido há 2 horas</div>
+    </div></div>
+  </article>
+</div>
+</main>
+</div>
+</body>
+</html>

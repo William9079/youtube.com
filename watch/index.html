@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YouTube - Reprodução</title>
+<style>
+body{font:16px Arial;margin:0;background:#fff;color:#111}
+header{padding:18px;border-bottom:1px solid #ddd}
+main{max-width:1000px;margin:25px auto;padding:15px}
+video{width:100%;background:#000;aspect-ratio:16/9}
+a{color:#065fd4}
+</style>
+</head>
+<body>
+<header><a href="../">? YouTube</a></header>
+<main>
+<h2 id="title">Carregando vídeo...</h2>
+<video id="player" controls playsinline></video>
+<p id="status">Verificando arquivo de vídeo...</p>
+<a id="download" hidden download>Baixar vídeo MP4</a>
+</main>
+<script>
+const videos = {
+  RE4ELGIGANT: {
+    title: "RESIDENT EVIL 4 - EL GIGANTE chorou no DESAFIO Profissional Very Hard",
+    file: "../videos/RE4ELGIGANT.mp4"
+  },
+  PS5UNBOXING: {
+    title: "UNBOXING DO MEU PS5 em 2021",
+    file: "../videos/PS5UNBOXING.mp4"
+  }
+};
+
+const id = new URLSearchParams(location.search).get("v");
+const data = videos[id];
+const player = document.getElementById("player");
+const status = document.getElementById("status");
+const download = document.getElementById("download");
+
+if (!data) {
+  document.getElementById("title").textContent = "Vídeo não encontrado";
+  status.textContent = "Identificador inválido.";
+} else {
+  document.title = data.title;
+  document.getElementById("title").textContent = data.title;
+  player.src = data.file;
+  download.href = data.file;
+  download.textContent = "Baixar vídeo MP4";
+  player.addEventListener("loadedmetadata", () => {
+    status.textContent = "Vídeo disponível para reprodução.";
+    download.hidden = false;
+  });
+  player.addEventListener("error", () => {
+    status.textContent = "Arquivo MP4 não encontrado. É necessário recuperar e adicionar o vídeo à pasta videos.";
+    download.hidden = true;
+  });
+}
+</script>
+</body>
+</html>
