@@ -1,0 +1,40 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^index.html$ / [L,R=301]
+RewriteRule ^index.htm$ / [L,R=301]
+RewriteRule ^index.asp$ / [L,R=301]
+RewriteRule ^index.phtml$ / [L,R=301]
+
+RewriteCond %{HTTP_USER_AGENT} ^rogerbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^exabot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^MJ12bot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^dotbot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^gigabot [OR]
+RewriteCond %{HTTP_USER_AGENT} ^AhrefsBot
+RewriteRule .* - [F]
+
+# BEGIN OldUrls
+
+RewriteRule ^about/$ files/about.html [L]
+RewriteRule ^trends/$ files/trends.html [L]
+RewriteRule ^kids/$ files/kids.html [L]
+RewriteRule ^about/press/$ files/about-press.html [L]
+RewriteRule ^about/copyright/$ files/about-copyright.html [L]
+RewriteRule ^t/contact_us/$ files/t-contact_us.html [L]
+RewriteRule ^creators/$ files/creators.html [L]
+RewriteRule ^ads/$ files/ads.html [L]
+RewriteRule ^t/terms$ files/t-terms.html [L]
+RewriteRule ^about/policies/$ files/about-policies.html [L]
+RewriteCond %{QUERY_STRING} ^utm_campaign=ytgen&utm_source=ythp&utm_medium=LeftNav&utm_content=txt&u=https%3A%2F%2Fwww.youtube.com%2Fhowyoutubeworks%3Futm_source%3Dythp%26utm_medium%3DLeftNav%26utm_campaign%3Dytgen$
+RewriteRule ^howyoutubeworks$ files/howyoutubeworks-utm_campaign-ytgen-utm_source-ythp-utm_medium-leftnav-utm_content-txt-u-https-www.youtube.com-howyoutubeworks-utm_source-ythp-utm_medium-leftnav-utm_campaign-ytgen.html [L]
+RewriteRule ^new$ files/new.html [L]
+# END OldUrls
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(\.png|\.jpg|\.gif|\.jpeg|\.bmp|\.js|\.css)$
+RewriteRule . / [L,R=301]
+
+</IfModule>
